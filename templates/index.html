@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Manager</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+  <script src="{{url_for('static', filename='js/script.js')}}" defer></script>
+</head>
+
+<body>
+  <header>
+    <img src="{{url_for('static', filename='images/password-icon.png')}}" alt="Password Manager Icon" />
+    <h1>Password Manager</h1>
+  </header>
+
+  <main>
+    <select id="option-container">
+      <option value="none">-- Select Option --</option>
+      <option value="platforms">Show Platforms</option>
+      <option value="fetch-details">Fetch Details</option>
+      <option value="fetch-details">Add New Password</option>
+    </select>
+
+    <div class="platform-controls invisible">
+      <div class="input-wrapper">
+        <label for="platform-name">Enter the platform Name: </label>
+        <input type="text" id="platform-name">
+      </div>
+      <button type="button" id="fetch-details-btn">Fetch Details</button>
+    </div>
+
+    <div class="add-new-pass invisible">
+      <div class="input-wrapper">
+        <label for="new-platform-name">Enter the platform Name: </label>
+        <input type="text" id="new-platform-name">
+      </div>
+      <div class="input-wrapper">
+        <label for="new-platform-username">Enter the username for this platform: </label>
+        <input type="text" id="new-platform-username">
+      </div>
+      <div class="input-wrapper">
+        <label for="new-platform-pass">Enter Password for this Platform: </label>
+        <input type="password" id="new-platform-pass">
+      </div>
+
+      <button type="button" id="add-new-platform">Add New Platform</button>
+    </div>
+
+    <div class="platform-details invisible">
+      <ul class="platform-list invisible"></ul>
+      <div class="fetch-result invisible">
+        <p class="res-pn"></p>
+        <p class="res-pun"></p>
+        <p class="res-ppn"></p>
+      </div>
+    </div>
+
+    <p id="helper-text" class="invisible">There is no matching plaform</p>
+
+  </main>
+</body>
+
+</html>
